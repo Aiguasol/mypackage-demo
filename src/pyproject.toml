@@ -2,7 +2,7 @@
 authors = ["Diego Quintana <diego.quintana@aiguasol.coop>"]
 description = "A base project for poetry projects"
 name = "mypackage"
-version = "0.1.0"
+version = "0.2.0"
 
 [tool.poetry.scripts]
 mypackage-cli = "mypackage.cli:app"
