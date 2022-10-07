@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   demo:
-    image: bluesmonk/poetry-demo:latest
+    image: aiguasol/mypackage-demo:latest
     env_file:
       - .env
     build:
