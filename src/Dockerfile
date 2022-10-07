@@ -34,7 +34,7 @@ RUN apt-get update -qy && \
 
 # install dependencies
 COPY poetry.lock poetry.toml pyproject.toml /src/
-RUN poetry install --no-dev --no-interaction --no-root
+RUN poetry install --only main --no-interaction --no-root
 
 # copy and run program
 COPY mypackage /src/mypackage
