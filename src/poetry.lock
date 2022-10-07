@@ -1846,7 +1846,7 @@ reference = "aiguasol"
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.10.2"
-content-hash = "04910aa85bdd5754d1256d6f8d6c99b63f0c842621c33a38dd1d8592ab2c35ad"
+content-hash = "c144cfd39116fe68e978e50ba9ac9e87a6b6cb26c1e9c50984c2f05c6bdbf170"
 
 [metadata.files]
 aiguasol-pvmodelling = [
