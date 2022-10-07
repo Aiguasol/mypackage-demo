@@ -1,0 +1,17 @@
+version: "3"
+services:
+  demo:
+    image: bluesmonk/poetry-demo:latest
+    env_file:
+      - .env
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    networks:
+      - demo-network
+    volumes:
+      - ./src:/src
+
+networks:
+  demo-network:
+    driver: bridge
