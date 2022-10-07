@@ -1,10 +1,15 @@
 from typing import Optional
+
+import cowsay
 import typer
 
 from mypackage.config import SettingsModeEnum, settings
 
 app = typer.Typer()
 
+@app.command()
+def greet(name: str = typer.Argument("person")):
+    typer.echo(cowsay.cow(name))
 
 @app.command()
 def print_settings():
