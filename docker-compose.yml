@@ -7,10 +7,13 @@ services:
     build:
       context: ./src
       dockerfile: Dockerfile
+      args:
+        - POETRY_HTTP_BASIC_AIGUASOL_USERNAME=${POETRY_HTTP_BASIC_AIGUASOL_USERNAME-aiguasol}
+        - POETRY_HTTP_BASIC_AIGUASOL_PASSWORD=${POETRY_HTTP_BASIC_AIGUASOL_PASSWORD?Variable not set}
     networks:
       - demo-network
     volumes:
-    #   # Update this to wherever you want VS Code to mount the folder of your project
+      #   # Update this to wherever you want VS Code to mount the folder of your project
       - ./src/mypackage:/src/mypackage
       - ./src/pyproject.toml:/src/pyproject.toml
       - ./src/poetry.toml:/src/poetry.toml
