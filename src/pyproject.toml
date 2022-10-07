@@ -1,0 +1,62 @@
+[tool.poetry]
+authors = ["Diego Quintana <diego.quintana@aiguasol.coop>"]
+description = "A base project for poetry projects"
+name = "mypackage"
+version = "0.1.0"
+
+[tool.poetry.scripts]
+mypackage-cli = "mypackage.cli:app"
+
+[tool.poetry.dependencies]
+pydantic = "^1.10.2"
+python = "~3.10.2"
+streamlit = "^1.12.2"
+typer = "^0.6.1"
+
+[tool.poetry.dev-dependencies]
+black = "^22.8.0"
+flake8 = "^5.0.4"
+ipykernel = "^6.15.3"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+log_cli = true
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+log_cli_format = "%(asctime)s [%(levelname)s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_level = "INFO"
+minversion = "6.0"
+testpaths = [
+  "src/tests",
+]
+
+[tool.black]
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+include = '\.pyi?$'
+line-length = 79
+target-version = ['py37']
+
+[tool.isort]
+line_length = 79
+multi_line_output = 3
+profile = "black"
