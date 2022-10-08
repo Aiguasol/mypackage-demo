@@ -39,5 +39,8 @@ RUN poetry install --only main --no-interaction --no-root
 # copy and run program
 COPY mypackage /src/mypackage
 
+# install package
+RUN poetry install --only main --no-interaction
+
 # leave container up
 CMD ["tail", "-f", "/dev/null"]
