@@ -12,13 +12,15 @@ Example project for developing a single package using Python and Poetry.
 ## Getting started with Docker
 
 1. Install [Docker](https://docs.docker.com/get-docker/) and `docker-compose` if you haven't already.
-2. copy `.env.sample` to `.env` and edit the variables as needed.
+1. Clone this repository and adapt `pyproject.toml` to your needs: package name, CLI commands, etc.
+1. Copy `.env.sample` to `.env` and edit the variables as needed.
    1. `POETRY_HTTP_BASIC_AIGUASOL_PASSWORD` should not be committed to version control.
-3. Launch containers with `docker compose up -d`
-4. Open the project inside a container using `vscode` remote container utilities.
+1. Launch containers with `docker compose up -d`
+1. Open the project inside a container using `vscode` remote container utilities.
    1. with the `Remote - Containers` extension, open the command palette and select `Remote-Containers: Open Folder in Container`.
-5. Update the code in `src/` and add dependencies as needed with `poetry add <package>`.
-6. Build the project and publish it to Aiguasol's repository using `poetry build` and `poetry publish --repository aiguasol`.
+   2. Alternatively use `docker compose exec -it demo bash` to access the container through `bash.
+1. Update the code in `src/` and add dependencies as needed with `poetry add <package>`.
+1. Build the project and publish it to Aiguasol's repository using `poetry build` and `poetry publish --repository aiguasol`.
 
 ## Getting started without Docker
 
@@ -37,4 +39,5 @@ Example project for developing a single package using Python and Poetry.
 - [ ] Add tests boilerplate
 - [ ] add CI boilerplate code
 - [ ] add Helm chart
-- [ ] convert the repository to template
+- [x] convert the repository to template
+- [ ] convert the repository to a cookiecutter template
