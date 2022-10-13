@@ -2,7 +2,7 @@
 authors = ["Diego Quintana <diego.quintana@aiguasol.coop>"]
 description = "A base project for poetry projects"
 name = "mypackage"
-version = "0.2.0"
+version = "0.5.1"
 
 [tool.poetry.scripts]
 mypackage-cli = "mypackage.cli:app"
@@ -14,6 +14,7 @@ streamlit = "^1.12.2"
 typer = ">=0.4.2"
 cowsay = "^5.0"
 aiguasol-pvmodelling = {version = "^0.1.3", source = "aiguasol"}
+pandas = "^1.5.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.8.0"
